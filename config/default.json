@@ -1,0 +1,11 @@
+{
+    "name": "Store Api",
+    "db": {
+      "address": "mongodb://localhost:27017/store_api"
+    },
+    "jwt_key":"dwq89d5wqd45s6ad48wqd4s56a4d56sad5wq894dq8w",
+    "dealerInfo":{
+      "email":"alinaderideveloper1@gmail.com",
+      "password":"syvhbiqitpddloks"
+    }
+  }
