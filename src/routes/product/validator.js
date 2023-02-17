@@ -17,7 +17,12 @@ module.exports = new class{
             check("image")
             .not()
             .isEmpty()
-            .withMessage("image cant be empty")
+            .withMessage("image cant be empty"),
+
+            check("price")
+            .not()
+            .isEmpty()
+            .withMessage("price cant be empty")
         ]
     }
 }

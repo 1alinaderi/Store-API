@@ -5,6 +5,8 @@ module.exports = new (class extends controller {
         const product = new this.Product({
             name: req.body.name,
             desc: req.body.desc,
+            price : req.body.price,
+            sold : req.body.sold
         })
         if (req.file){
             product.image = req.file.path
@@ -64,7 +66,7 @@ module.exports = new (class extends controller {
         if(req.query.name){
             const product = await this.Product.deleteOne({name : req.query.name})
             this.response({
-                res , message : "successful deleted" , data : {product} 
+                res , message : "successful deleted" , data : {product}
               })
         }else if (req.query.id){
             const product = await this.Product.deleteOne({id : req.query.id})

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const timestamp = require("mongoose-timestamp")
 
 const adminSchema = new mongoose.Schema({
     email : {type : String , required : true , unique : true},
@@ -10,11 +11,17 @@ const productSchema = new mongoose.Schema({
     desc:{type : String , required : true},
     image : { type : String , required : true },
     id : {type:Number },
-    price : {type : Number , require : true },
+    price : {type : Number , required : true },
+    sold : {type : Boolean , default : false }
 }) 
+productSchema.plugin(timestamp)
 
 const DataSchema = new mongoose.Schema({
-    view : {type : Number}
+    view : {type : Number} ,
+    storeValue : {type : Number },
+    soldValue : {type : Number},
+    itemSold : {type:Number} ,
+    allitems : { type : Number }
 })
 
 const Data = mongoose.model("Data" , DataSchema);
