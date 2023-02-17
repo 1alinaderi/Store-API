@@ -1,12 +1,13 @@
 const autoBind = require("auto-bind");
 const { validationResult } = require('express-validator');
-const {AdminUser , Product} = require("../models/admin");
+const {AdminUser , Product , Data} = require("../models/admin");
 
 module.exports = class {
     constructor(){
         autoBind(this)
         this.AdminUser = AdminUser;
         this.Product = Product;
+        this.Data = Data ;
     }
 
     validationBody(req,res){
